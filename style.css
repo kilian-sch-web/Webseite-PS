@@ -1,4 +1,4 @@
-/* --- Luxurious & Colorful Redesign --- */
+/* --- Luxurious & Colorful Redesign (Mobile Optimized) --- */
 
 /* 1. General & Typography */
 body {
@@ -251,27 +251,58 @@ footer a:hover {
     color: #ffffff;
 }
 
-/* 7. Media Queries */
+/* 7. Media Queries for Mobile Optimization */
 @media(max-width: 768px){
+    /* General Layout */
+    .container {
+        width: 90%;
+    }
+
+    /* Header & Mobile Navigation */
     header {
         text-align: center;
+        padding: 15px 0;
     }
     header #branding,
-    header nav,
-    header nav li {
+    header nav {
         float: none;
         text-align: center;
         width: 100%;
-        padding: 10px 0;
     }
     header #branding {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
+    }
+    header nav ul {
+        border-top: 1px solid #e8e5db;
+    }
+    header nav li {
+        display: block;
+        padding: 0;
+    }
+    header nav a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid #e8e5db;
+    }
+    header .current a {
+        background: #fdfbf5;
     }
 
-    #hero h1 { font-size: 42px; }
-    #hero p { font-size: 20px; }
-    #intro h2 { font-size: 32px; }
+    /* Section Spacing */
+    #hero { padding: 60px 0; }
+    #intro { padding: 50px 0; }
+    #services { padding: 50px 0; }
+    main { padding: 30px 0; }
+    footer { padding: 30px 0; }
 
+    /* Typography */
+    #hero h1 { font-size: 38px; }
+    #hero p { font-size: 18px; }
+    #intro h2 { font-size: 30px; }
+    .page-title { font-size: 36px; margin-bottom: 30px; }
+    h3 { font-size: 24px; }
+
+    /* Column Layouts */
     #services .container,
     .about-content {
         flex-direction: column;
