@@ -281,8 +281,9 @@ footer a:hover {
     }
     header nav a {
         display: block;
-        padding: 15px 0;
+        padding: 12px 0; /* Reduced padding */
         border-bottom: 1px solid #e8e5db;
+        font-size: 17px; /* Slightly smaller font for mobile nav */
     }
     header .current a {
         background: #fdfbf5;
