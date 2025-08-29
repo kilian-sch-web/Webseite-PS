@@ -1,0 +1,306 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: #ffffff;
+    color: #333;
+    padding-top: 20px;
+    min-height: 70px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header a {
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .current a {
+    color: #003366;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #003366;
+    font-weight: bold;
+}
+
+
+/* Main Content */
+main {
+    padding: 20px 0;
+}
+
+.page-title {
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 300px;
+    background: #003366;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 20px;
+}
+
+/* Intro Section */
+#intro {
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Services Section */
+#services {
+    padding: 20px 0;
+    overflow: hidden; /* Clear floats */
+}
+
+#services .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#services .box {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+#services .box h3 {
+    color: #003366;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    background: #003366;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background: #004080;
+    color: #ffffff;
+}
+
+
+/* Footer */
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #003366;
+    text-align: center;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+/* About Page Layout */
+.about-content {
+    overflow: hidden; /* Clear floats */
+    display: flex;
+    gap: 30px;
+}
+
+.main-col {
+    flex: 3; /* Takes 3/4 of the space */
+}
+
+.sidebar {
+    flex: 1; /* Takes 1/4 of the space */
+    background: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar .profile-image img {
+    width: 100%;
+    height: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+    margin-bottom: 10px;
+}
+
+
+/* Service List (used on subpages) */
+.service-item {
+    background: #ffffff;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    color: #003366;
+    margin-top: 0;
+}
+
+
+/* Blog Post Layout */
+.blog-post {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-post h3 {
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.blog-post .post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-post a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+}
+
+
+/* Contact Page */
+.contact-content {
+    display: flex;
+    gap: 30px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* Media Queries for basic responsiveness */
+@media(max-width: 768px){
+    .contact-content,
+    .about-content {
+        flex-direction: column;
+    }
+
+    header #branding,
+    header nav,
+    header nav li {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        padding-bottom: 20px;
+    }
+
+    #hero h1 {
+        font-size: 36px;
+    }
+
+    #services .container {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
