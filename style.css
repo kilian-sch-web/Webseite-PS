@@ -1,35 +1,47 @@
-/* --- Luxurious & Colorful Redesign (Mobile Optimized) --- */
+/* --- Lachenmaier Website CSS - Modern & Clean --- */
 
-/* 1. General & Typography */
+/* 1. CSS Variables & Global Styles */
+:root {
+    --primary-dark: #1A2A45; /* Deep Navy for footer/header elements */
+    --primary-text: #333333; /* Dark Grey for body copy */
+    --accent-warm: #8B4513;   /* SaddleBrown as a "Mocha Mousse" for tradition */
+    --accent-action: #007BFF; /* A vibrant blue for buttons and links */
+    --background-light: #FDFBF5; /* Warm Cream Background */
+    --white: #ffffff;
+    --border-color: #e8e5db;
+}
+
 body {
-    font-family: 'Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-    line-height: 1.8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background: #FDFBF5; /* Warm Cream Background */
-    color: #333333; /* Dark Grey Text */
+    background: var(--background-light);
+    color: var(--primary-text);
+    font-size: 16px;
 }
 
 .container {
-    max-width: 980px;
+    max-width: 1100px;
     width: 90%;
     margin: auto;
     overflow: hidden;
 }
 
-h1, h2, h3 {
-    font-weight: normal;
-    color: #1A2A45; /* Deep Navy */
+h1, h2, h3, h4 {
+    font-weight: 700; /* Bold Typography */
+    color: var(--primary-dark);
+    margin-top: 0;
 }
 
 a {
-    color: #B8860B; /* Dark Goldenrod */
+    color: var(--accent-action);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #D4AF37; /* Lighter Gold */
+    color: var(--primary-dark);
 }
 
 ul {
@@ -39,276 +51,215 @@ ul {
 }
 
 /* 2. Header & Navigation */
-header {
-    background: #ffffff;
-    padding: 25px 0;
-    border-bottom: 1px solid #e8e5db;
-    min-height: auto;
+.header {
+    background: var(--white);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-header #branding h1 {
-    margin: 0;
+.header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo a {
     font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.logo .tagline {
+    font-size: 14px;
+    color: var(--accent-warm);
+    display: block;
+}
+
+.nav {
+    margin-top: 15px;
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav li {
+    padding: 5px 10px;
+}
+
+.nav a {
+    font-size: 18px;
+    color: var(--primary-text);
     font-weight: 500;
 }
 
-header #branding h1 a {
-    color: #1A2A45;
+.nav a.current, .nav a:hover {
+    color: var(--accent-action);
 }
 
-header nav {
-    float: right;
-    margin-top: 8px;
-}
 
-header li {
-    float: left;
-    display: inline;
-    padding: 0 0 0 45px;
-}
-
-header a {
-    text-transform: none;
-    font-size: 18px;
-    color: #333333;
-}
-
-header .current a {
-    color: #B8860B;
-    font-weight: bold;
-}
-
-/* 3. Homepage Sections */
-#hero {
-    background: #1A2A45; /* Deep Navy Background */
-    color: #FDFBF5; /* Cream Text */
+/* 3. Main Content Sections */
+main section {
+    padding: 60px 0;
     text-align: center;
-    padding: 100px 0;
+}
+
+#hero {
+    background: var(--primary-dark);
+    color: var(--white);
 }
 
 #hero h1 {
-    font-size: 56px;
-    font-weight: 300;
-    margin: 0 0 20px 0;
-    color: #ffffff; /* White for max contrast */
+    font-size: 2.5em;
+    color: var(--white);
+    margin-bottom: 10px;
 }
 
 #hero p {
-    font-size: 24px;
-    color: #e0e0e0;
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
 }
 
-#intro {
-    padding: 70px 0;
-    text-align: center;
-    background: #FDFBF5;
-}
-
-#intro h2 {
-    font-size: 40px;
-}
-
-#intro p {
-    max-width: 720px;
-    margin: 20px auto 0 auto;
-    font-size: 19px;
-}
-
-#services {
-    padding: 70px 0;
-    background: #ffffff;
-    border-top: 1px solid #e8e5db;
-    border-bottom: 1px solid #e8e5db;
-}
-
-#services .container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-#services .box {
-    text-align: center;
-    padding: 30px;
-}
-
-#services .box h3 {
-    font-size: 26px;
-}
-
-/* 4. Subpage Content */
-main {
-    background: #FDFBF5;
-    padding: 50px 0;
-}
-
-.page-title {
-    font-size: 48px;
-    text-align: center;
-    margin-bottom: 50px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #e8e5db;
-}
-
-.about-content {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
-}
-
-.main-col {
-    flex: 2;
-    background: #ffffff;
-    padding: 40px;
-    border: 1px solid #e8e5db;
-}
-
-.sidebar {
-    flex: 1;
-    background: #ffffff;
-    padding: 30px;
-    border: 1px solid #e8e5db;
-}
-
-.sidebar .profile-image img {
-    width: 100%;
-}
-
-.sidebar h3 {
-    margin-top: 20px;
-    border-top: 1px solid #e8e5db;
-    padding-top: 20px;
-}
-
-.service-item {
-    border-bottom: 1px solid #e8e5db;
-    padding: 30px 0;
-}
-.service-item:last-child {
-    border-bottom: none;
-}
-
-/* 5. Forms & Buttons */
 .button {
     display: inline-block;
-    background: #B8860B; /* Dark Goldenrod */
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border: none;
-    margin-top: 20px;
+    background: var(--accent-action);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 5px;
     font-size: 16px;
-    font-family: 'Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-    background: #D4AF37; /* Lighter Gold */
-    color: #ffffff;
+    background: #0056b3; /* Darker blue */
+    color: var(--white);
     transform: translateY(-2px);
 }
 
-.contact-content-centered {
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 40px;
-    background: #ffffff;
-    border: 1px solid #e8e5db;
+#intro {
+    background: var(--background-light);
 }
 
-.contact-content-centered h3 {
-    font-size: 32px;
-}
-
-.contact-details {
-    list-style: none;
-    padding: 0;
-    margin-top: 30px;
-    font-size: 20px;
-}
-
-.contact-details li {
+#intro h2 {
+    font-size: 2.2em;
     margin-bottom: 20px;
 }
 
-/* 6. Footer */
-footer {
-    padding: 50px 0;
-    margin-top: 0;
-    color: #e0e0e0;
-    background-color: #1A2A45; /* Deep Navy */
+#intro p {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+#services {
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.service-box {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.service-box h3 a {
+    color: var(--primary-dark);
+}
+
+/* 4. Footer */
+.footer {
+    background: var(--primary-dark);
+    color: var(--background-light);
+    padding: 40px 0 20px 0;
     text-align: center;
 }
 
-footer a {
-    color: #D4AF37;
-    font-weight: bold;
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-footer a:hover {
-    color: #ffffff;
+.footer-col h4 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* 7. Media Queries for Mobile Optimization */
-@media(max-width: 768px){
-    /* General Layout */
-    .container {
-        width: 90%;
+.footer-col p, .footer-col ul {
+    margin-bottom: 0;
+}
+
+.footer-col a {
+    color: var(--background-light);
+}
+
+.footer-col a:hover {
+    color: var(--accent-action);
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #3c506e; /* Slightly lighter border */
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+/* 5. Media Queries for Responsiveness */
+@media(min-width: 768px) {
+    body {
+        font-size: 17px;
     }
 
-    /* Header & Mobile Navigation */
-    header {
-        text-align: center;
-        padding: 15px 0;
-    }
-    header #branding,
-    header nav {
-        float: none;
-        text-align: center;
-        width: 100%;
-    }
-    header #branding {
-        margin-bottom: 15px;
-    }
-    header nav ul {
-        border-top: 1px solid #e8e5db;
-    }
-    header nav li {
-        display: block;
-        padding: 0;
-    }
-    header nav a {
-        display: block;
-        padding: 12px 0; /* Reduced padding */
-        border-bottom: 1px solid #e8e5db;
-        font-size: 17px; /* Slightly smaller font for mobile nav */
-    }
-    header .current a {
-        background: #fdfbf5;
+    /* Header */
+    .header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
     }
 
-    /* Section Spacing */
-    #hero { padding: 60px 0; }
-    #intro { padding: 50px 0; }
-    #services { padding: 50px 0; }
-    main { padding: 30px 0; }
-    footer { padding: 30px 0; }
-
-    /* Typography */
-    #hero h1 { font-size: 38px; }
-    #hero p { font-size: 18px; }
-    #intro h2 { font-size: 30px; }
-    .page-title { font-size: 36px; margin-bottom: 30px; }
-    h3 { font-size: 24px; }
-
-    /* Column Layouts */
-    #services .container,
-    .about-content {
-        flex-direction: column;
+    .nav {
+        margin-top: 8px; /* Align with logo text */
     }
-    .main-col, .sidebar {
-        padding: 25px;
+
+    .nav li {
+        padding: 0 0 0 30px;
+    }
+
+    /* Services Layout */
+    #services .container {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .service-box {
+        flex: 1;
+        margin-top: 0;
+    }
+
+    /* Footer Layout */
+    .footer {
+        text-align: left;
+    }
+
+    .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-col {
+        flex: 1;
+        padding: 0 15px;
     }
 }
