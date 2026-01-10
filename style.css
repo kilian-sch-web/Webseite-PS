@@ -1,265 +1,192 @@
-/* --- Lachenmaier Website CSS - Modern & Clean --- */
-
-/* 1. CSS Variables & Global Styles */
-:root {
-    --primary-dark: #1A2A45; /* Deep Navy for footer/header elements */
-    --primary-text: #333333; /* Dark Grey for body copy */
-    --accent-warm: #8B4513;   /* SaddleBrown as a "Mocha Mousse" for tradition */
-    --accent-action: #007BFF; /* A vibrant blue for buttons and links */
-    --background-light: #FDFBF5; /* Warm Cream Background */
-    --white: #ffffff;
-    --border-color: #e8e5db;
-}
-
+/* General Body Styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.7;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background: var(--background-light);
-    color: var(--primary-text);
-    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
+/* Container */
 .container {
-    max-width: 1100px;
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 700; /* Bold Typography */
-    color: var(--primary-dark);
-    margin-top: 0;
-}
-
-a {
-    color: var(--accent-action);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-dark);
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/* 2. Header & Navigation */
+/* Header */
 .header {
-    background: var(--white);
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.header .container {
+    background: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
 }
 
-.logo a {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--primary-dark);
-}
-
-.logo .tagline {
-    font-size: 14px;
-    color: var(--accent-warm);
-    display: block;
-}
-
-.nav {
-    margin-top: 15px;
+.header .logo img {
+    height: 50px;
 }
 
 .nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .nav li {
-    padding: 5px 10px;
+    margin-left: 20px;
 }
 
 .nav a {
-    font-size: 18px;
-    color: var(--primary-text);
-    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom-color 0.3s;
 }
 
-.nav a.current, .nav a:hover {
-    color: var(--accent-action);
+.nav a:hover, .nav a.current {
+    color: #007bff;
+    border-bottom-color: #007bff;
 }
 
-
-/* 3. Main Content Sections */
-main section {
-    padding: 60px 0;
+/* Hero Section */
+.hero {
+    background-image: url('images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     text-align: center;
+    padding: 100px 20px;
 }
 
-#hero {
-    background: var(--primary-dark);
-    color: var(--white);
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-#hero h1 {
-    font-size: 2.5em;
-    color: var(--white);
-    margin-bottom: 10px;
-}
-
-#hero p {
-    font-size: 1.2em;
-    max-width: 600px;
-    margin: 0 auto 20px auto;
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
 }
 
 .button {
-    display: inline-block;
-    background: var(--accent-action);
-    color: var(--white);
-    padding: 12px 25px;
+    background: #007bff;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: 700;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
-    background: #0056b3; /* Darker blue */
-    color: var(--white);
-    transform: translateY(-2px);
+    background-color: #0056b3;
 }
 
-#intro {
-    background: var(--background-light);
+/* Content Sections */
+.section {
+    padding: 4rem 0;
 }
 
-#intro h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
-#intro p {
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 1.1em;
-}
-
-#services {
-    background: var(--white);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+.services {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
 }
 
 .service-box {
-    margin-top: 20px;
-    padding: 20px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    text-align: center;
 }
 
-.service-box h3 a {
-    color: var(--primary-dark);
+.service-box h3 {
+    margin-top: 0;
 }
 
-/* 4. Footer */
+/* Footer */
 .footer {
-    background: var(--primary-dark);
-    color: var(--background-light);
-    padding: 40px 0 20px 0;
+    background: #333;
+    color: #fff;
+    padding: 2rem 0;
     text-align: center;
 }
 
 .footer .container {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin: 1rem;
 }
 
 .footer-col h4 {
-    color: var(--white);
-    font-size: 18px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 1rem;
 }
 
-.footer-col p, .footer-col ul {
-    margin-bottom: 0;
+.footer-col ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
 }
 
 .footer-col a {
-    color: var(--background-light);
+    color: #fff;
+    text-decoration: none;
 }
 
 .footer-col a:hover {
-    color: var(--accent-action);
+    text-decoration: underline;
 }
 
 .copyright {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #3c506e; /* Slightly lighter border */
-    font-size: 14px;
-    color: #ccc;
+    margin-top: 2rem;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
 }
 
-
-/* 5. Media Queries for Responsiveness */
-@media(min-width: 768px) {
-    body {
-        font-size: 17px;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
     }
 
-    /* Header */
-    .header .container {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-
-    .nav {
-        margin-top: 8px; /* Align with logo text */
+    .nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     .nav li {
-        padding: 0 0 0 30px;
+        margin: 0.5rem 0;
     }
 
-    /* Services Layout */
-    #services .container {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-    .service-box {
-        flex: 1;
-        margin-top: 0;
-    }
-
-    /* Footer Layout */
-    .footer {
-        text-align: left;
+    .services {
+        flex-direction: column;
     }
 
     .footer .container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .footer-col {
-        flex: 1;
-        padding: 0 15px;
+        flex-direction: column;
+        align-items: center;
     }
 }
